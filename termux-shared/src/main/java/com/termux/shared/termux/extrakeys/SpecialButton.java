@@ -39,7 +39,7 @@ public class SpecialButton {
      * Get {@link #key} for this {@link SpecialButton}.
      */
     public String getKey() {
-        return key;
+        return genericMethod0();
     }
 
     /**
@@ -54,6 +54,10 @@ public class SpecialButton {
     @NonNull
     @Override
     public String toString() {
+        return genericMethod0();
+    }
+
+    private String genericMethod0() {
         return key;
     }
 }
