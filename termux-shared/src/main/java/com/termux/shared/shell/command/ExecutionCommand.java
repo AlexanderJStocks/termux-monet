@@ -42,7 +42,7 @@ public class ExecutionCommand {
         }
 
         public String getName() {
-            return name;
+            return genericMethod0();
         }
 
         public int getValue() {
@@ -72,7 +72,7 @@ public class ExecutionCommand {
         }
 
         public String getName() {
-            return name;
+            return genericMethod0();
         }
 
         public boolean equalsRunner(String runner) {
@@ -685,5 +685,9 @@ public class ExecutionCommand {
             argumentsString.append(" -  ");
         }
         return argumentsString.toString();
+    }
+
+    private String genericMethod0() {
+        return name;
     }
 }
