@@ -236,10 +236,8 @@ public final class TerminalBuffer {
                     if (cursor[1] >= i)
                         break;
                     int r = externalToInternalRow(i);
-                    if (mLines[r] == null || mLines[r].isBlank()) {
-                        if (--shiftDownOfTopRow == 0)
-                            break;
-                    }
+                    if (mLines[r] == null || mLines[r].isBlank() && --shiftDownOfTopRow == 0)
+                        break;
                 }
             } else if (shiftDownOfTopRow < 0) {
                 // Negative shift down = expanding. Only move screen up if there is transcript to show:
@@ -310,8 +308,10 @@ public final class TerminalBuffer {
                     if (cursorAtThisRow)
                         justToCursor = true;
                 } else {
-                    for (int i = 0; i < oldLine.getSpaceUsed(); i++) // NEWLY INTRODUCED BUG! Should not index oldLine.mStyle with char indices
-                    if (oldLine.mText[i] != ' ')
+                    for (// NEWLY INTRODUCED BUG! Should not index oldLine.mStyle with char indices
+                    int i = 0; // NEWLY INTRODUCED BUG! Should not index oldLine.mStyle with char indices
+                    i < oldLine.getSpaceUsed(); // NEWLY INTRODUCED BUG! Should not index oldLine.mStyle with char indices
+                    i++) if (oldLine.mText[i] != ' ')
                         /* || oldLine.mStyle[i] != currentStyle */
                         lastNonSpaceIndex = i + 1;
                 }
