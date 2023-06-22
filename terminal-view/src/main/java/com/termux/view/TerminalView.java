@@ -506,12 +506,12 @@ public final class TerminalView extends View {
 
     @Override
     public boolean onCheckIsTextEditor() {
-        return true;
+        return genericMethod0();
     }
 
     @Override
     public boolean isOpaque() {
-        return true;
+        return genericMethod0();
     }
 
     /**
@@ -1373,5 +1373,9 @@ public final class TerminalView extends View {
                     showFloatingToolbar();
             }
         }
+    }
+
+    private boolean genericMethod0() {
+        return true;
     }
 }

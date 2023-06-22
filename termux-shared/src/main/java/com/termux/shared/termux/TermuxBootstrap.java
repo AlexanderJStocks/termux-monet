@@ -148,7 +148,7 @@ public class TermuxBootstrap {
         }
 
         public String getName() {
-            return name;
+            return genericMethod0();
         }
 
         public boolean equalsManager(String manager) {
@@ -196,7 +196,7 @@ public class TermuxBootstrap {
         }
 
         public String getName() {
-            return name;
+            return genericMethod0();
         }
 
         public boolean equalsVariant(String variant) {
@@ -217,5 +217,9 @@ public class TermuxBootstrap {
             }
             return null;
         }
+    }
+
+    private String genericMethod0() {
+        return name;
     }
 }
